@@ -1,0 +1,32 @@
+{% extends "user.html" %}
+{% block content %}
+    <h1>Administración de cursos</h1>
+    <p>
+        <a class="btn btn-lg btn-primary"href="{% url "users:new" %}">Agregar
+            curso</a>
+    </p>
+    <table class="table table-striped">
+        <thead>
+        <tr>
+            <th>id</th>
+            <th>Nombre</th>
+            <th>Descripcion</th>
+            <th>Opciones</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in object_list %}
+            <tr>
+                <td>{{ user.id}}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.description }}</td>
+                <td>
+                    <a href="{% url "users:detail" user.id %}">Ver</a> |
+                    <a href="{% url "users:edit" user.id %}">Editar</a> |
+                    <a href="{% url "users:delete" user.id %}">Borrar</a>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}
