@@ -1,7 +1,5 @@
 from django.conf.urls import url
-from .views import (
-    UserList, UserDetail, UserCreation, UserUpdate, UserDelete)
-
+from .views import (UserList, UserDetail, UserCreation, UserUpdate, UserDelete)
 app_name = 'users'
 
 urlpatterns = [
